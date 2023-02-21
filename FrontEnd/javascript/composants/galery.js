@@ -1,6 +1,6 @@
 /*retourner la list de la galerie fournie par l api*/
 const galerie = async () => {  //funcao
-    const listgalerie = await fetch("http://localhost:5678/api/works", {
+    const listgalerie = await fetch("http://localhost:5678/api/works", { //fetch interage com a api
         method: "GET",
         headers: {
             'Content-Type': 'application/json'
@@ -11,7 +11,7 @@ const galerie = async () => {  //funcao
 }
 /*afficher les travaux sur la page d accueil*/
 const affichework = async () => {
-    const work = await galerie(); // xamei a funcao galerie
+    const work = await galerie(); // xamei a funcao galerie, await attend la reponse d la list des travaux
     const gallery = document.querySelector(".gallery");
     for(let i=0; i<work.length;i++){
        let figure = document.createElement("figure");//crear a tag figure
