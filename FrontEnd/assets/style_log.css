@@ -1,47 +1,48 @@
 @import url('https://fonts.googleapis.com/css2?family=Syne&display=swap');
 
 body {
-	max-width: 1140px;
-	margin:auto;
-	font-family: 'Work Sans' ;
-	font-size: 14px;
+    max-width: 1140px;
+    margin: auto;
+    font-family: 'Work Sans';
+    font-size: 14px;
     font-style: normal;
 }
 
 header {
-	display: flex;
-	justify-content: space-between;
-	margin: 50px 0
+    display: flex;
+    justify-content: space-between;
+    margin: 50px 0
 }
 
-h1{
-	display: flex;
-	flex-direction: column;
-	font-family: 'Syne';
-	font-size: 22px;
-	font-weight: 800;
-	color: #B1663C
+h1 {
+    display: flex;
+    flex-direction: column;
+    font-family: 'Syne';
+    font-size: 22px;
+    font-weight: 800;
+    color: #B1663C
 }
 
-h1 > span {
-	font-family: 'Work Sans';
-	font-size:10px;
-	letter-spacing: 0.1em;
+h1>span {
+    font-family: 'Work Sans';
+    font-size: 10px;
+    letter-spacing: 0.1em;
 }
 
 nav ul {
-	display: flex;
-	align-items: center;
-	list-style-type: none;
+    display: flex;
+    align-items: center;
+    list-style-type: none;
 
 }
+
 nav li {
-	padding: 0 10px;
-	font-size: 1.2em;
+    padding: 0 10px;
+    font-size: 1.2em;
 }
 
-li:hover {
-	color: #B1663C;
+li img {
+    width: 20px;
 }
 
 h2 {
@@ -59,18 +60,15 @@ form {
     flex-direction: column;
 }
 
-.form {
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 30px;
-}
-
 label {
     color: #3D3D3D;
     margin-bottom: 7px;
+    margin-top: 30px;
+    margin-left: -333px;
 }
 
-#email, #password {
+#email,
+#password {
     box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.09);
     width: 379px;
     height: 51px;
@@ -86,7 +84,7 @@ label {
     border: #1D6154;
     width: 179px;
     height: 36px;
-    margin-top: 7px;
+    margin-top: 37px;
     margin-bottom: 28px;
 }
 
@@ -97,7 +95,7 @@ a {
 }
 
 footer nav ul {
-	display: flex;
-	justify-content: flex-end;
-	margin: 2em
+    display: flex;
+    justify-content: flex-end;
+    margin: 2em
 }

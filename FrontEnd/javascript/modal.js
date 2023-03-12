@@ -6,11 +6,12 @@ para cada lien vou juntar 1event e quando vamos clicar no lien vamos chamar uma 
 depois criar a funcao numa constante, é a funcao k vai ter os parametros do evento
 
 */
-import {} from "./composants/galery.js";
+//import {} from "./composants/galery.js";
 letmodal = null
 
 const openModal = function (e) {
     e.preventDefault()
+    document.getElementById('modal').style.display = "block";
     const modal = document.querySelector(e.modal.getAttribute('href'))
     modal.style.display = null
     modal.removeAttribute ('aria-hidden')
@@ -24,6 +25,7 @@ const openModal = function (e) {
 const closeModal = function (e) {
     if (modal === null) return
     e.preventDefault()
+    document.getElementById('modal').style.display = "none";
     modal.style.display = "none"
     modal.setAttribute('aria-hidden', 'true')
     modal.removeAttribute('aria-modal')

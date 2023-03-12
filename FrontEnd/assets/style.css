@@ -4,19 +4,87 @@
 */
 @import url('https://fonts.googleapis.com/css2?family=Syne&display=swap');
 
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed,
-figure, figcaption, footer, header, hgroup,
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
 	margin: 0;
 	padding: 0;
 	border: 0;
@@ -24,41 +92,63 @@ time, mark, audio, video {
 	font: inherit;
 	vertical-align: baseline;
 }
+
 /* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure,
-footer, header, hgroup, menu, nav, section {
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
 	display: block;
 }
+
 body {
 	line-height: 1;
 }
-ol, ul {
+
+ol,
+ul {
 	list-style: none;
 }
-blockquote, q {
+
+blockquote,
+q {
 	quotes: none;
 }
-blockquote:before, blockquote:after,
-q:before, q:after {
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
 	content: '';
 	content: none;
 }
+
 table {
 	border-collapse: collapse;
 	border-spacing: 0;
 }
+
 /** end reset css**/
 body {
 	max-width: 1140px;
-	margin:auto;
-	font-family: 'Work Sans' ;
+	margin: auto;
+	font-family: 'Work Sans';
 	font-size: 14px;
 }
+
 header {
 	display: flex;
 	justify-content: space-between;
 	margin: 50px 0
 }
+
 section {
 	margin: 50px 0
 }
@@ -71,7 +161,7 @@ section {
 	justify-content: center;
 	width: 100%;
 	height: 59px;
-	margin-left: -81px;
+	margin-left: -105px;
 	margin-top: -50px;
 	gap: 21px;
 	background-color: black;
@@ -80,6 +170,7 @@ section {
 	font-weight: 400;
 	font-family: 'Work Sans';
 }
+
 .edit button {
 	border-radius: 60px;
 	Width: 216px;
@@ -88,9 +179,10 @@ section {
 	font-weight: 500;
 	font-family: 'Work Sans';
 }
+
 /* end of modify bar*/
 
-h1{
+h1 {
 	display: flex;
 	flex-direction: column;
 	font-family: 'Syne';
@@ -100,18 +192,19 @@ h1{
 	margin-top: 40px;
 }
 
-h1 > span {
+h1>span {
 	font-family: 'Work Sans';
-	font-size:10px;
+	font-size: 10px;
 	letter-spacing: 0.1em;
 }
 
-h2{
+h2 {
 	font-family: 'Syne';
 	font-weight: 700;
 	font-size: 30px;
 	color: #1D6154
 }
+
 nav ul {
 	display: flex;
 	align-items: center;
@@ -119,6 +212,7 @@ nav ul {
 	margin-top: 40px;
 
 }
+
 nav li {
 	padding: 0 10px;
 	font-size: 1.2em;
@@ -127,24 +221,39 @@ nav li {
 li:hover {
 	color: #B1663C;
 }
-a {
+
+nav a {
 	color: black;
 	text-decoration: none;
 }
-a:hover {
+
+nav a:hover {
 	color: #B1663C;
 }
+
+nav img {
+	width: 20px;
+}
+
 #introduction {
 	display: flex;
 	align-items: center;
 }
+
 #introduction figure {
 	flex: 1
 }
 
 /*modification*/
+#introduction figure i {
+	margin-left: 59px;
+	margin-top: 16px;
+}
+
 #introduction figure a {
-	margin: 15px 0 15px 91px;
+	margin: 15px 0 15px 5px;
+	text-decoration: none;
+	color: black;
 }
 
 #introduction img {
@@ -159,7 +268,14 @@ a:hover {
 
 /*modification*/
 #introduction aside {
-	margin: -77px 0 19px 22px;
+	gap: 11px;
+	display: flex;
+	margin: -77px 0 19px 5px;
+}
+
+#introduction a {
+	text-decoration: none;
+	color: black;
 }
 
 #introduction h2 {
@@ -169,58 +285,64 @@ a:hover {
 /*modification*/
 .modify {
 	display: flex;
-    justify-content: center;
-    gap: 19px;
-    align-items: center;
-	margin-left: 112px;
+	justify-content: center;
+	gap: 11px;
+	align-items: center;
+	margin-top: 84px;
+}
+
+.modify h2 {
+	margin-right: 20px;
+}
+
+.modify a {
+	text-decoration: none;
+	color: #000000;
 }
 
 /*modal*/
 .modal {
-	position: fixed;
 	position: absolute;
-	display: flex;
-    align-items: center;
-    justify-content: center;
 	width: 630px;
 	height: 731px;
 	left: 360px;
 	top: 590px;
-	background: #cc8080;
+	background: white;
 	border-radius: 10px;
 }
+
 .contentmodal {
-	padding: 100px;
-	overflow: auto;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
 }
+
+.jsclosemodal {
+	margin-top: 32px;
+	margin-left: 552px;
+	border: 0 solid;
+	background: white;
+}
+
 #titlemodal {
-	position: absolute;
 	font-family: 'Work Sans';
 	font-style: normal;
 	font-weight: 400;
 	font-size: 26px;
-	line-height: 30px;
 	text-align: center;
 	color: #000000;
 }
-.photos {
 
-}
-.photos img {
-	width: 75px;
-	height: 100px;
-}
-.photos p {
-	font-family: 'Work Sans';
-	font-size: 12px;
-}
 .line {
-	position: absolute;
+	margin-top: 450px;
+	margin-bottom: 48px;
 	width: 420px;
 	left: 510px;
 	border: 1px solid #B3B3B3;
 }
-.contentmodal input {
+
+.btnaddphoto {
 	width: 237px;
 	height: 36px;
 	border: #1D6154;
@@ -230,17 +352,155 @@ a:hover {
 	font-style: normal;
 	font-weight: 700;
 	font-size: 14px;
-	line-height: 17px;
+	line-height: 35px;
 	text-align: center;
+	text-decoration: auto;
 	color: #FFFFFF;
 }
-.contentmodal a {
+
+.btndelect {
+	margin-top: 33px;
 	font-family: 'Syne';
 	font-style: normal;
 	font-weight: 400;
 	font-size: 14px;
-	text-align: center;
 	color: #D65353;
+	border: 0 solid;
+	background: white;
+}
+
+/* modal 2 */
+
+.modal2 {
+	position: absolute;
+	width: 630px;
+	height: 731px;
+	left: 360px;
+	top: 590px;
+	background: white;
+	border-radius: 10px;
+}
+
+.contentmodal2 {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.contentmodal2 a {
+	margin-left: -546px;
+	margin-top: 29px;
+}
+
+.jsclosemodal2 {
+	margin-top: -13px;
+	margin-left: 552px;
+	border: 0 solid;
+	background: white;
+}
+
+.addphoto {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: space-evenly;
+	width: 420px;
+	height: 169px;
+	background: #E8F1F7;
+	border-radius: 3px;
+	margin-top: 36px;
+	margin-bottom: 30px;
+}
+
+.addphoto i {
+	background: #B9C5CC;
+	width: 58px;
+	height: 46px;
+}
+
+.addphoto input {
+	display: none;
+}
+
+.addphoto span {
+	position: absolute;
+	display: block;
+	background: #CBD6DC;
+	border-radius: 50px;
+	width: 173px;
+	height: 36px;
+	text-align: center;
+	font-family: 'Work Sans';
+	font-style: normal;
+	font-weight: 600;
+	font-size: 14px;
+	color: #306685;
+}
+
+.addphoto p {
+	font-size: 10px;
+	color: #444444;
+}
+
+.formmodal2 {
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+}
+
+.formmodal2 label {
+	margin-top: 11px;
+	font-family: 'Work Sans';
+	font-style: normal;
+	font-weight: 500;
+	font-size: 14px;
+	line-height: 16px;
+	color: #3D3D3D;
+}
+
+#formtitre {
+	width: 420px;
+	height: 40px;
+	background: #FFFFFF;
+	box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.09);
+	border: white;
+	font-weight: 400;
+	font-size: 14px;
+	line-height: 16px;
+	color: #444444;
+}
+
+#formcategorie {
+	width: 420px;
+	height: 40px;
+	background: #FFFFFF;
+	box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.09);
+	border: white;
+	font-weight: 400;
+	font-size: 14px;
+	line-height: 16px;
+	color: #444444;
+}
+
+.line2 {
+	margin-top: 48px;
+	margin-bottom: 32px;
+	width: 420px;
+	left: 510px;
+	border: 1px solid #B3B3B3;
+}
+
+.btnvalider {
+	width: 237px;
+	height: 36px;
+	border-radius: 60px;
+	border: 0 solid;
+	background: #A7A7A7;
+	font-family: 'Syne';
+	font-weight: 700;
+	font-size: 14px;
+	color: #FFFFFF;
 }
 
 /* category filters */
@@ -251,27 +511,32 @@ a:hover {
 	margin-top: 60px;
 	margin-bottom: 60px;
 }
+
 .filters {
 	border-radius: 60px;
-    border: 1px solid #1D6154;
-    background: white;
-    height: 37px;
+	border: 1px solid #1D6154;
+	background: white;
+	height: 37px;
 	width: 100px;
 	font-family: 'syne', sans-serif;
-    font-weight: 700;
-    font-size: 16px;
-    color: #1D6154;
+	font-weight: 700;
+	font-size: 16px;
+	color: #1D6154;
 }
+
 .filters:hover {
 	background: #1D6154;
 	color: white;
 }
+
 .largeurfilter3 {
 	width: 157px;
 }
+
 .largeurfilter4 {
 	width: 210px;
 }
+
 /* end of category filters */
 
 .gallery {
@@ -286,20 +551,24 @@ a:hover {
 	width: 100%;
 
 }
+
 #contact {
 	width: 50%;
-margin: auto;
+	margin: auto;
 }
-#contact > * {
+
+#contact>* {
 	text-align: center;
 
 }
-#contact h2{
+
+#contact h2 {
 	margin-bottom: 20px;
 }
+
 #contact form {
 	text-align: left;
-	margin-top:30px;
+	margin-top: 30px;
 	display: flex;
 	flex-direction: column;
 }
@@ -310,23 +579,25 @@ margin: auto;
 	border: none;
 	box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.09);
 }
+
 #contact label {
 	margin: 2em 0 1em 0;
 }
+
 #contact textarea {
 	border: none;
 	box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.09);
 }
 
-input[type="submit"]{
+input[type="submit"] {
 	font-family: 'Syne';
 	font-weight: 700;
 	color: white;
 	background-color: #1D6154;
-	margin : 2em auto ;
+	margin: 2em auto;
 	width: 180px;
 	text-align: center;
-	border-radius: 60px ;
+	border-radius: 60px;
 }
 
 footer nav ul {
@@ -334,4 +605,3 @@ footer nav ul {
 	justify-content: flex-end;
 	margin: 2em
 }
-

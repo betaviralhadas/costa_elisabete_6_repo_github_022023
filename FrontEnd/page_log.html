@@ -1,15 +1,18 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Work+Sans&display=swap" rel="stylesheet">
-	<meta name="description" content="">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Work+Sans&display=swap"
+        rel="stylesheet">
+    <meta name="description" content="">
     <link rel="stylesheet" href="./assets/style_log.css">
     <title>Page de login</title>
 </head>
+
 <body>
     <header>
         <h1>Sophie Bluel <span>Architecte d'inteérieur</span></h1>
@@ -17,7 +20,7 @@
             <ul>
                 <li>projets</li>
                 <li>contact</li>
-                <li>login</li>
+                <li><strong>login</strong></li>
                 <li><img src="./assets/icons/instagram.png" alt="Instagram"></li>
             </ul>
         </nav>
@@ -25,15 +28,15 @@
     <main>
         <h2>Log In</h2>
         <label id="error"> </label>
-        <form class="formulaire form" method="post">
-            
-                <label for="email-input">E-mail</label>
-                <input id="email" class="email" name="email" type="email" autocomplete="on"/>
-           
-                <label for="password">Mot de passe</label>
-                <input id="password" class="password" name="password" type="password"/>
-            
-            <input id="connect" type="submit" value="se connecter"/>
+        <form class="form" method="post" action="">
+
+            <label for="email-input">E-mail</label>
+            <input id="email" class="email" name="email" type="email" autocomplete="on" />
+
+            <label for="password" style="margin-left: -287px;">Mot de passe</label>
+            <input id="password" class="password" name="password" type="password" />
+
+            <input id="connect" type="submit" value="se connecter" />
             <a href="#">Mot de passe oublié</a>
         </form>
     </main>
@@ -46,4 +49,5 @@
     </footer>
     <script src="./javascript/page_log.js"></script>
 </body>
+
 </html>
