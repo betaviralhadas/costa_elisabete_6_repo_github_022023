@@ -76,6 +76,7 @@ label {
 }
 
 #connect {
+    cursor: pointer;
     font-family: 'syne';
     font-weight: 700;
     color: white;

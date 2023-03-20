@@ -97,12 +97,6 @@ if (token != null) {
     masque.forEach(elementsmasque => {
         elementsmasque.style.display = "content"
     })
-    /*
-    const filters = document.querySelector('.selectionfilters');
-    
-        filters.style.display = "none"
-    console.log(filters);
-*/
 }
 else {
     const masque = document.querySelectorAll('.masque');
@@ -110,6 +104,7 @@ else {
         elementsmasque.style.display = "none"
     })
 }
+
 
 /*
 const selectionfilters = document.querySelector(".selectionfilters");
