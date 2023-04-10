@@ -26,7 +26,8 @@
 			<ul>
 				<li>projets</li>
 				<li>contact</li>
-				<li><a href="./page_log.html">login</a></li>
+				<li><a class="login" href="./page_log.html">login</a></li>
+				<li><a class="logout" style="display: none;">logout</a></li>
 				<li><img src="./assets/icons/instagram.png" alt="Instagram"></li>
 			</ul>
 		</nav>
@@ -73,27 +74,28 @@
 			<aside id="modal2" class="modal2" aria-hidden="true" role="dialog" aria-labelledby="titlemodal"
 				style="display: none;">
 				<div class="contentmodal2">
-					<a href="#modal"><i class="fa-solid fa-arrow-left"></i></a>
+					<a href="#modal"><i class="fa-solid fa-arrow-left iconArrowLeft"></i></a>
 					<button class="jsclosemodal2">X</button>
 					<h1 id="titlemodal">Ajout photo</h1>
-					<label class="addphoto">
-						<i class="fa-regular fa-image"></i>
-						<input type="file" name="addphoto" id="fileInput" accept="images" required>
-						<span class="picture__image"></span>
-						<p>jpg, png : 4mo max</p>
-					</label>
+					<span class="errorFile"></span>
 					<form class="formmodal2" action="">
+						<label class="addphoto">
+							<i class="fa-regular fa-image"></i>
+							<input type="file" name="image" id="fileInput" accept=".png, .jpg, .jpeg" required>
+							<span class="picture__image"></span>
+							<p>jpg, png : 4mo max</p>
+						</label>
 						<label for="titre">Titre</label>
-						<input id="formtitre" type="text" name="titre">
+						<input id="formtitre" type="text" name="title">
 						<label for="categorie">Catégorie</label>
-						<select name="categorie" id="formcategorie">
-							<option value="objets">Objects</option>
-							<option value="appartements">Appartements</option>
-							<option value="hotels&restaurants">Hôtels & restaurants</option>
+						<select name="category" id="formcategorie">
+							<option value="1">Objects</option>
+							<option value="2">Appartements</option>
+							<option value="3">Hôtels & restaurants</option>
 						</select>
+						<div class="line2"></div>
+						<input class="btnvalider" type="submit" value="Valider" />
 					</form>
-					<div class="line2"></div>
-					<input class="btnvalider" type="button" value="Valider" />
 				</div>
 			</aside>
 			<!--<article class="selectionfilters">

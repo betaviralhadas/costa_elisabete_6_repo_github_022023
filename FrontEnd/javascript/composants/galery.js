@@ -42,34 +42,41 @@ const filtrer = async () => {
     return category;
 }
 
+//recuperar o token k se encontra no localstorage
+const tokenusers = localStorage.getItem("token");
+
 const affichecategory = async (elt_category) => {
     const category = await filtrer();
 
     const creerdiv = document.createElement("article");
     creerdiv.classList.add("selectionfilters");
-    const btn_all = document.createElement("button");
-    btn_all.innerHTML = "Tous";
-    btn_all.classList.add("filters");
-    btn_all.dataset.category = "all";
-    creerdiv.appendChild(btn_all);
-    btn_all.setAttribute("data-name", "Tous");
-    
-    for (let i = 0; i < category.length; i++) {
-        const btn = document.createElement("button");
-        btn.innerHTML = category[i].name;
-        creerdiv.appendChild(btn);
-        btn.classList.add("filters");
-        btn.dataset.category = "category" + category[i].id
-        if (i === 1 || i === 2) {
-            btn.classList.add("largeurfilter4");
+    if (tokenusers) {
+        document.querySelector('.selectionfilters').style.display = "none";
+    } else {
+        const btn_all = document.createElement("button");
+        btn_all.innerHTML = "Tous";
+        btn_all.classList.add("filters");
+        btn_all.dataset.category = "all";
+        creerdiv.appendChild(btn_all);
+        btn_all.setAttribute("data-name", "Tous");
+
+        for (let i = 0; i < category.length; i++) {
+            const btn = document.createElement("button");
+            btn.innerHTML = category[i].name;
+            creerdiv.appendChild(btn);
+            btn.classList.add("filters");
+            btn.dataset.category = "category" + category[i].id
+            if (i === 1 || i === 2) {
+                btn.classList.add("largeurfilter4");
+            }
         }
+        for (const button of creerdiv.children) {
+            button.addEventListener('click', () => {
+                afficheCategoryFiltres(button.dataset.category)
+            })
+        }
+        gallery.insertAdjacentElement("beforebegin", creerdiv); //inserer cote a cote avant gallery
     }
-    for (const button of creerdiv.children) {
-        button.addEventListener('click', () => {
-            afficheCategoryFiltres(button.dataset.category)
-        })
-    }
-    gallery.insertAdjacentElement("beforebegin", creerdiv); //inserer cote a cote avant gallery
 }
 affichecategory();
 
