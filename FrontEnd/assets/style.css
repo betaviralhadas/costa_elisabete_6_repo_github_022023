@@ -352,13 +352,6 @@ nav img {
 	height: 104px;
 }
 
-.editer {
-	cursor: pointer;
-	font-size: 12px;
-	font-weight: 400;
-	line-height: 14px;
-}
-
 .icons {
 	cursor: pointer;
 	display: grid;
@@ -373,6 +366,34 @@ nav img {
 	border-radius: 2px;
 	font-size: 10px;
 	align-items: center;
+}
+
+.iconarrow {
+	margin-left: -40px;
+	background-color: #000000;
+	color: white;
+	width: 17px;
+	height: 17px;
+	border-radius: 2px;
+	font-size: 10px;
+	align-items: center;
+}
+
+.iconarrow::before {
+	top: 3px;
+	left: -16px;
+	position: absolute;
+}
+
+.icontrash {
+	margin-top: -17px;
+}
+
+.editer {
+	cursor: pointer;
+	font-size: 12px;
+	font-weight: 400;
+	line-height: 14px;
 }
 
 .line {

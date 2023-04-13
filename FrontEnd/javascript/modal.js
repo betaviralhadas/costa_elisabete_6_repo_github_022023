@@ -9,23 +9,25 @@ const galeriemodal = async () => {
     return listgalerie;
 }
 
+//abrir 1ºmodal
 const openModal = function (e) {
-    //e.preventDefault()
     document.querySelector(".photos").innerHTML = '';
     document.getElementById('modal').style.display = "block";
     afficheworkmodal();
 }
 
+//fechar 1ºmodal
 const closeModal = function (e) {
-    //e.preventDefault()
     document.getElementById('modal').style.display = "none";
 }
 document.querySelector('.jsclosemodal').addEventListener('click', closeModal);
 
+//abrir modal ao clicar em modificar
 document.querySelectorAll('.masque').forEach(a => {
     a.addEventListener('click', openModal)
 })
 
+//abrir o 2ºmodal
 const openModal2 = function (e) {
     e.preventDefault()
     closeModal();
@@ -33,6 +35,7 @@ const openModal2 = function (e) {
 }
 document.querySelector('.btnaddphoto').addEventListener('click', openModal2);
 
+//fechar 2ºmodal
 const closeModal2 = function (e) {
     e.preventDefault()
     document.getElementById('modal2').style.display = "none";
@@ -40,6 +43,7 @@ const closeModal2 = function (e) {
 }
 document.querySelector('.jsclosemodal2').addEventListener('click', closeModal2);
 
+//fechar 1ºmodal com a tecla esc
 window.addEventListener('keydown', function (e) {
     if (e.key === "Escape" || e.key === "Esc") {
         closeModal(e)
@@ -47,7 +51,7 @@ window.addEventListener('keydown', function (e) {
 })
 
 const modal1 = document.getElementById("modal")
-//fermer en cliquant n'importe ou
+//fechar o 1ºmodal clicando em klk sitio
 window.addEventListener("click", (e) => {
     if (e.target === modal1) {
         closeModal();
@@ -55,19 +59,20 @@ window.addEventListener("click", (e) => {
     console.log("fechar");
 });
 
+//funçao p/mostrar os trabalhos no 1ºmodal
 const gallerymodal = document.querySelector(".photos");
 const afficheworkmodal = async () => {
     const work = await galeriemodal();
 
     for (let i = 0; i < work.length; i++) {
-        let figure = document.createElement("figure");//crear a tag figure
-        gallerymodal.appendChild(figure);//o parente gallery xama o filho figure
+        let figure = document.createElement("figure");
+        gallerymodal.appendChild(figure);
         figure.classList.add("category" + work[i].category.id);
         figure.classList.add("all");
         figure.classList.add("modal_cart");
         let image = document.createElement("img");
         figure.appendChild(image);
-        image.src = work[i].imageUrl; //fui buscar o valor imageurl ao ficheiro workmodel do back
+        image.src = work[i].imageUrl;
         let editer = document.createElement("p");
         figure.appendChild(editer);
         editer.innerHTML = "éditer";
@@ -79,7 +84,8 @@ const afficheworkmodal = async () => {
         figcaption.addEventListener('click', deleteImg.bind(this, work[i].id));
 
         if (i === 0) {
-            figcaption.innerHTML = `<i class="fa-solid fa-arrows-up-down-left-right"></i> <i class = "fa-solid fa-trash-can"></i>`;
+            figcaption.innerHTML = `<i class="fa-solid fa-arrows-up-down-left-right iconarrow"></i> <i class = "fa-solid fa-trash-can icontrash"></i>`;
+
         }
     }
 }
@@ -111,22 +117,24 @@ const deleteImg = async (id) => {
     return listgalerie;
 }
 
+//clicar na seta do 2ºmodal volta ao 1ºmodal
 const iconArrowLeft = document.querySelector(".iconArrowLeft");
 
 iconArrowLeft.addEventListener("click", function () {
     openModal()
 })
 
+
 const inputFile = document.querySelector("#fileInput");
 const pictureImage = document.querySelector(".picture__image");
 const pictureImageTxt = "+ Ajouter photo";
 pictureImage.innerHTML = pictureImageTxt;
-
+//funcao p/mostrar a img carregada no formulario
 inputFile.addEventListener("change", function (e) {
     const inputTarget = e.target;
-    const file = inputTarget.files[0];
+    const file = inputTarget.files[0];//recuperei a imagem
 
-    if (file) {
+    if (file) {//se a imagem existe
         const reader = new FileReader();
 
         reader.addEventListener("load", function (e) {
@@ -164,35 +172,34 @@ modalForm.addEventListener('submit', (e) => {
         } else if (res.status === 400) {
             let errorText = document.querySelector(".errorFile")
             errorText.innerHTML = "action impossible !"
-            //errorText.innerHTML = ""
+
         } else if (res.status === 401) {
             let errorText = document.querySelector(".errorFile")
             errorText.innerHTML = "Action non autorisée !"
-            //errorText.innerHTML = ""
+
         } else if (res.status === 500) {
             let errorText = document.querySelector(".errorFile")
             errorText.innerHTML = "Veuillez ajouter une photo"
-            //errorText.innerHTML = "."
         }
     }).then(function (data) {
         if (data === 'created') {
             document.querySelector(".photos").innerHTML = '';
             document.querySelector(".gallery").innerHTML = "";
             openModal()
-            //afficheworkmodal()
             affichework()
 
         }
     })
 })
-//meter o logout e tirar os filtros
+//mostrar o botao logout 
 if (tokenuser) {
     document.querySelector('.logout').style.display = "block";
     document.querySelector(".login").style.display = "none";
 
 }
 
+//ao fazer logout, limpa tudo o k ta no localstorage
 document.querySelector('.logout').addEventListener('click', () => {
-    localStorage.clear();//limpar
+    localStorage.clear();
     document.location.href = "./index.html"
 })

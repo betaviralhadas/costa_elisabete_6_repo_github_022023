@@ -1,4 +1,4 @@
-
+//recuperar os trabalhos a partir do backend atraves d api
 const galerie = async () => {
     const listgalerie = await fetch("http://localhost:5678/api/works", {
         method: "GET",
@@ -11,7 +11,7 @@ const galerie = async () => {
 }
 
 const gallery = document.querySelector(".gallery");
-
+//funcao p/mostrar os trabalhos no site
 const affichework = async () => {
     const work = await galerie();
 
@@ -30,7 +30,7 @@ const affichework = async () => {
 }
 window.onload = affichework();
 
-
+//filtros
 const filtrer = async () => {
     const category = await fetch("http://localhost:5678/api" + "/categories", {
         method: "GET",
@@ -45,42 +45,42 @@ const filtrer = async () => {
 //recuperar o token k se encontra no localstorage
 const tokenusers = localStorage.getItem("token");
 
+//mostrar filtros
 const affichecategory = async (elt_category) => {
     const category = await filtrer();
-
     const creerdiv = document.createElement("article");
     creerdiv.classList.add("selectionfilters");
+    const btn_all = document.createElement("button");
+    btn_all.innerHTML = "Tous";
+    btn_all.classList.add("filters");
+    btn_all.dataset.category = "all";
+    creerdiv.appendChild(btn_all);
+    btn_all.setAttribute("data-name", "Tous");
+
+    for (let i = 0; i < category.length; i++) {
+        const btn = document.createElement("button");
+        btn.innerHTML = category[i].name;
+        creerdiv.appendChild(btn);
+        btn.classList.add("filters");
+        btn.dataset.category = "category" + category[i].id
+        if (i === 1 || i === 2) {
+            btn.classList.add("largeurfilter4");
+        }
+    }
+    for (const button of creerdiv.children) {
+        button.addEventListener('click', () => {
+            afficheCategoryFiltres(button.dataset.category)
+        })
+    }
+    gallery.insertAdjacentElement("beforebegin", creerdiv); //inserir os botoes de filtro antes da gallery
+
     if (tokenusers) {
         document.querySelector('.selectionfilters').style.display = "none";
-    } else {
-        const btn_all = document.createElement("button");
-        btn_all.innerHTML = "Tous";
-        btn_all.classList.add("filters");
-        btn_all.dataset.category = "all";
-        creerdiv.appendChild(btn_all);
-        btn_all.setAttribute("data-name", "Tous");
-
-        for (let i = 0; i < category.length; i++) {
-            const btn = document.createElement("button");
-            btn.innerHTML = category[i].name;
-            creerdiv.appendChild(btn);
-            btn.classList.add("filters");
-            btn.dataset.category = "category" + category[i].id
-            if (i === 1 || i === 2) {
-                btn.classList.add("largeurfilter4");
-            }
-        }
-        for (const button of creerdiv.children) {
-            button.addEventListener('click', () => {
-                afficheCategoryFiltres(button.dataset.category)
-            })
-        }
-        gallery.insertAdjacentElement("beforebegin", creerdiv); //inserer cote a cote avant gallery
     }
 }
 affichecategory();
 
-function afficheCategoryFiltres(category) {
+function afficheCategoryFiltres(category) {//escolher os filtros
     for (const child of gallery.children) {
         if (child.classList.contains(category)) {
             child.style.display = "Block"
@@ -90,6 +90,7 @@ function afficheCategoryFiltres(category) {
     }
 };
 
+//para mostrar ou esconder os botoes de modificar 
 const token = localStorage.getItem('token');
 if (token != null) {
     const masque = document.querySelectorAll('.masque');
