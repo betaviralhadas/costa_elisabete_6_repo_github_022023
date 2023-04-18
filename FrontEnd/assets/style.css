@@ -303,13 +303,19 @@ nav img {
 /*modal*/
 .modal {
 	position: absolute;
-	z-index: 1;
+	
 	width: 630px;
 	height: 731px;
 	left: 360px;
 	top: 590px;
 	background: white;
 	border-radius: 10px;
+    z-index: 1;
+	/*background: rgba(0, 0, 0, 0.5);
+	transform: scale(1.1);
+	opacity: 0;
+	visibility: hidden;
+	transition: 0.25s ease-in-out;*/
 }
 
 .contentmodal {
@@ -318,6 +324,7 @@ nav img {
 	justify-content: center;
 	align-items: center;
 	overflow: auto;
+	background: white;
 }
 
 .jsclosemodal {
@@ -601,7 +608,7 @@ nav img {
 	color: #1D6154;
 }
 
-.filters:hover {
+.filters:focus {
 	background: #1D6154;
 	color: white;
 }
