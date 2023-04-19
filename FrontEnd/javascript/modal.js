@@ -13,12 +13,14 @@ const galeriemodal = async () => {
 const openModal = function (e) {
     document.querySelector(".photos").innerHTML = '';
     document.getElementById('modal').style.display = "block";
+    document.getElementById('backmodal').style.backgroundColor = "rgba(0, 0, 0, 0.5)";
     afficheworkmodal();
 }
 
 //fechar 1ºmodal
 const closeModal = function (e) {
     document.getElementById('modal').style.display = "none";
+    document.getElementById('backmodal').style.backgroundColor = "white";
 }
 document.querySelector('.jsclosemodal').addEventListener('click', closeModal);
 
@@ -32,6 +34,7 @@ const openModal2 = function (e) {
     e.preventDefault()
     closeModal();
     document.getElementById('modal2').style.display = "block";
+    document.getElementById('backmodal').style.backgroundColor = "rgba(0, 0, 0, 0.5)";
 }
 document.querySelector('.btnaddphoto').addEventListener('click', openModal2);
 
@@ -39,7 +42,8 @@ document.querySelector('.btnaddphoto').addEventListener('click', openModal2);
 const closeModal2 = function (e) {
     e.preventDefault()
     document.getElementById('modal2').style.display = "none";
-    openModal();
+    document.getElementById('backmodal').style.backgroundColor = "white";
+    //openModal();
 }
 document.querySelector('.jsclosemodal2').addEventListener('click', closeModal2);
 
